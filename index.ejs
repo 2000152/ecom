@@ -1,0 +1,56 @@
+<!-- index.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Data Display Example</title>
+</head>
+<body>
+  <h1>Data Insert Example</h1>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Column 1</th>
+        <th>Column 2</th>
+      </tr>
+    </thead>
+    <tbody>
+       <form action="/insert" method="post">
+    <label for="id">ID:</label>
+    <input type="text" id="id" name="id">
+    <br>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <br>
+    <button type="submit">Insert Data</button>
+  </form>
+  <h1>Data Update Example</h1>
+  
+  <form action="/update" method="post">
+    <label for="id">ID:</label>
+    <input type="text" id="id" name="id">
+    <br>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <br>
+    <button type="submit">Update Data</button>
+  </form>
+  <h1>Data Deletion Example</h1>
+  
+  <form action="/delete" method="post">
+    <label for="id">ID:</label>
+    <input type="text" id="id" name="id">
+    <br>
+    <button type="submit">Delete Data</button>
+  </form>
+  <h1>Data Read Example</h1>
+      <% data.forEach(function(row) { %>
+        <tr>
+          <td><%= row.userid %></td>
+          <td><%= row.username %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</body>
+</html>
